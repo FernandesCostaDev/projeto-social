@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+/*Resete total da página*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Configurar o html e body para ocupar 100% da página - view port*/
+
+html, body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+body{
+    background-image: url(midias/imagem/curtidas.jpg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+
+    /*backgroun size cover para cobrir a tela inteira com a imagem*/
+    background-size: cover;
+    
+    /*Não ha necessidade nesse caso, mas já define uma imagem fixa de background*/
+    background-attachment: fixed;
+}
+
+main{
+    position: relative;
+    height: 100vh;    
+}
+
+section#telefone{
+    position: absolute;
+
+    /*Com a configuração do position, agora só ajustar o conteúdo no meio da tela com os comando top e left*/
+    top:65%;
+    left:50%;
+
+    /*Ajuste fino com o transform*/
+    transform: translate(-50%, -50%);
+
+    /*altura e largura de acordo com tamanho da foto do celular*/
+    height: 627px;
+    width: 311px;
+
+    background-image: url(midias/imagem/frame-iphone.png);
+    background-repeat: no-repeat;
+    
+}
+
+/*Criação dos menus laterais*/
+section#redes-sociais > a > img{
+    /*Como a imagem dos logo são muito grandes para ser usado como menus, definir o tamanho abaixo*/
+    width: 50px;
+    height: 50px;
+
+    /*Separar as logos com uma distância um pouco maior*/
+    margin: 10px;
+
+    /*Arrendondar as bordas*/
+    border-radius: 50%;
+
+    /*Fazer um sombrado nas logos*/
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.247);
+
+    /*Fazer a borda fazer parte da logo*/
+    box-sizing: border-box;    
+}
+
+/*Criar um efeito quando mause passar por cima de uma logo*/
+section#redes-sociais > a > img:hover{
+    border:2px solid rgba(255, 255, 255, 0.623);
+
+    /*Fazer com que a logo se mova para uma lateral esquerda quando mause passar por cima, por isso um numero negativo.*/
+    transform: translate(-3px, -3px);
+
+    /*Aumentar o sombreamento quando a logo se mover para lateral*/
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.397) ;
+
+    /*Fazer com que o transform se mova lentamente e a borda suja segundos depois do mause passsar por cima*/
+    transition: transform 2s, border 0.5s;
+}
+
+/*Colocar o menu centralizado*/
+section#redes-sociais{
+    text-align: center;
+}
+
+/*Configurando o iframe*/
+
+iframe#tela{
+    /*Criar um posicionamento relativo para imagem ficar somente dentro da tela do celular, pois esse iframe é filho da section celular. Com esse posicionamento relativo podemos configurar as dimensões do iframe.*/
+    position: relative;
+    top: 80px;
+    left: 22px;
+
+    /*Como a imagem da home é muito grande, foi necessário diminui-la com 100px para ter uma noção e ir ajustando até ficar numa proporção igual da tela do celular.*/
+    width: 269px;
+    height: 471px;
+
+}
